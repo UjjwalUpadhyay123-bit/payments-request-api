@@ -52,14 +52,14 @@ function load () {
         }]
       };
         const data = {
-          mobile: true,
+          mobile: '',
           initTxnData: {
             mid: 'PRINTE0148525564528',
-            orderId: 'integration_20210520124427',
-            amount: 10,
-            txnToken: '8827d71f-ef31-40b8-9be7-aad9460a7100'
+            orderId: 'integration_20230127173841',
+            amount: '1',
+            txnToken: 'eb5ac0017d584f549c92daf92bb72e221674821322973'
           },
-          type: 'PAYMENT_GATEWAY'
+          type: undefined
         };
         const supportedPaymentMethods = [
           {supportedMethods: 'https://www.paytm.com', data: data},
