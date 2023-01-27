@@ -62,7 +62,7 @@ function load () {
           type: undefined
         };
         const supportedPaymentMethods = [
-          {supportedMethods: 'https://www.paytm.com', data: data},
+          {supportedMethods: 'https://stage-webapp.paytm.in', data: data},
           // {
           //   supportedMethods: 'https://bobbucks.dev/pay',
           //   data: {
