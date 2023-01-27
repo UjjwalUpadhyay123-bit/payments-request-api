@@ -52,7 +52,7 @@ function load () {
         }]
       };
         const supportedPaymentMethods = [
-          {supportedMethods: 'https://pay.google.com', data: googlePaymentDataRequest},
+          {supportedMethods: 'https://www.paytm.com'},
           // {
           //   supportedMethods: 'https://bobbucks.dev/pay',
           //   data: {
@@ -127,7 +127,8 @@ function load () {
               ]
         };
         const paymentRequest = new PaymentRequest(supportedPaymentMethods, details, options);
-        paymentRequest.show().then((response) => validateResponse(response)).catch((err) => console.log(err));
+        paymentRequest.canMakePayment().then(isSupported => alert(isSupported));
+        //paymentRequest.show().then((response) => validateResponse(response)).catch((err) => console.log(err));
     } else {
         // nont supported
     }
