@@ -54,12 +54,12 @@ function load () {
         const data = {
           mobile: true,
           initTxnData: {
-            mid: 'tKCRi949114099019109',
+            mid: 'PRINTE0148525564528',
             orderId: 'integration_20210520124427',
             amount: 10,
             txnToken: '8827d71f-ef31-40b8-9be7-aad9460a7100'
           },
-          type: 'CARD'
+          type: 'PAYMENT_GATEWAY'
         };
         const supportedPaymentMethods = [
           {supportedMethods: 'https://www.paytm.com', data: data},
