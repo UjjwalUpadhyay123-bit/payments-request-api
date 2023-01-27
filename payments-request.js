@@ -52,7 +52,7 @@ function load () {
         }]
       };
         const supportedPaymentMethods = [
-          {supportedMethods: 'https://paytm.com'},
+          {supportedMethods: 'https://pay.google.com', data: googlePaymentDataRequest},
           // {
           //   supportedMethods: 'https://bobbucks.dev/pay',
           //   data: {
