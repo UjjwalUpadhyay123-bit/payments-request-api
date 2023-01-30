@@ -59,7 +59,8 @@ function load () {
             amount: '1',
             txnToken: '97201810f1234163851ee3791da727b21675085784787'
           },
-          type: 'FULL_APP_INVOKE'
+          type: 'FULL_APP_INVOKE',
+          fetchPayOption: {}
         };
         const supportedPaymentMethods = [
           {supportedMethods: 'https://securegw.paytm.in/pay', data: data},
