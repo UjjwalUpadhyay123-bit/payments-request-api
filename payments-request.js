@@ -55,11 +55,11 @@ function load () {
           mobile: '',
           initTxnData: {
             mid: 'PRINTE0148525564528',
-            orderId: 'integration_20230130114017',
+            orderId: 'integration_20230130190616',
             amount: '1',
-            txnToken: '0bb407b67f4049f1ab7b9eefdc6018621675059019304'
+            txnToken: '97201810f1234163851ee3791da727b21675085784787'
           },
-          type: undefined
+          type: 'FULL_APP_INVOKE'
         };
         const supportedPaymentMethods = [
           {supportedMethods: 'https://securegw.paytm.in/pay', data: data},
