@@ -2,9 +2,7 @@
 const checkAllValues = response => {
     return new Promise((resolve, reject) => {
         console.log('response', response);
-        // Object.keys(response).forEach(val => {
-        //     if (val === null) resolve(false);
-        // })
+        
         resolve(true);
     });
 }
