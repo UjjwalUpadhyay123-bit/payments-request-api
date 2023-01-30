@@ -104,8 +104,7 @@ function load () {
           requestPayerName: true
         };
         const paymentRequest = new PaymentRequest(supportedPaymentMethods, details, options);
-        paymentRequest.canMakePayment().then(isAppSupported => {isAppSupported && paymentRequest.show().
-          then(paymentResponse => {
+        paymentRequest.canMakePayment().then(isAppSupported => {isAppSupported && paymentRequest.show().then(paymentResponse => {
             let data = {};
             data.methodName = paymentResponse.methodName;
             data.details = paymentResponse.details;
