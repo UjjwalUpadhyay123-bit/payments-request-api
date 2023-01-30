@@ -137,7 +137,7 @@ function load () {
               ]
         };
         const paymentRequest = new PaymentRequest(supportedPaymentMethods, details, options);
-        paymentRequest.canMakePayment().then(isAppSupported => {isAppSupported && paymentRequest.show();});
+        paymentRequest.canMakePayment().then(isAppSupported => {isAppSupported && paymentRequest.show().then(paymentResponse => {paymentResponse.complete('success')}});
         //paymentRequest.show().then((response) => validateResponse(response)).catch((err) => console.log(err));
     } else {
         // nont supported
