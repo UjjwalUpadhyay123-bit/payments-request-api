@@ -118,7 +118,7 @@ function load () {
               },
               body: JSON.stringify(data)
             }).then (response => {
-              if(response.status === 2000) {
+              if(response.status === 200) {
                 return result.complete('success');
               }
             }).catch(() => {
