@@ -103,41 +103,29 @@ function load () {
           requestPayerEmail: true,
           requestPayerName: true
         };
-        const paymentDetails = {
-            total: {
-                label: 'Total Cost',
-                amount: {
-                    currency: 'INR',
-                    value: 10
-                }
-            },
-            displayItems: [
-                {
-                  label: '15% Discount',
-                  amount: {
-                    currency: 'INR',
-                    value: 1
-                  }
-                },
-                {
-                  label: 'Tax',
-                  amount: {
-                    currency: 'INR',
-                    value: 1.5
-                  }
-                }
-              ],
-              shippingOptions: [
-                {
-                  id: 'standard',
-                  label: 'Standard shipping',
-                  amount: {currency: 'INR', value: '5.00'},
-                  selected: true
-                }
-              ]
-        };
         const paymentRequest = new PaymentRequest(supportedPaymentMethods, details, options);
-        paymentRequest.canMakePayment().then(isAppSupported => {isAppSupported && paymentRequest.show().then(paymentResponse => {paymentResponse.complete('success')})});
+        paymentRequest.canMakePayment().then(isAppSupported => {isAppSupported && paymentRequest.show().
+          then(paymentResponse => {
+            let data = {};
+            data.methodName = paymentResponse.methodName;
+            data.details = paymentResponse.details;
+
+            return fetch('/pay', {
+              method: 'POST',
+              credentials: 'include',
+              headers: {
+                'Content-Type': 'application/json'
+              },
+              body: JSON.stringify(data)
+            }).then (response => {
+              if(response.status === 2000) {
+                return XPathResult.complete('success');
+              }
+            }).catch(() => {
+              result.complete('fail');
+            })
+            // paymentResponse.complete('success')
+          })});
         //paymentRequest.show().then((response) => validateResponse(response)).catch((err) => console.log(err));
     } else {
         // nont supported
