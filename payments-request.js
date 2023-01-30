@@ -62,7 +62,7 @@ function load () {
           type: undefined
         };
         const supportedPaymentMethods = [
-          {supportedMethods: 'https://securegw-stage.paytm.in', data: data},
+          {supportedMethods: 'https://securegw.paytm.in/pay', data: data},
           // {
           //   supportedMethods: 'https://bobbucks.dev/pay',
           //   data: {
