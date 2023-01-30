@@ -119,7 +119,7 @@ function load () {
               body: JSON.stringify(data)
             }).then (response => {
               if(response.status === 2000) {
-                return XPathResult.complete('success');
+                return result.complete('success');
               }
             }).catch(() => {
               result.complete('fail');
