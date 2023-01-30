@@ -55,9 +55,9 @@ function load () {
           mobile: '',
           initTxnData: {
             mid: 'PRINTE0148525564528',
-            orderId: 'integration_20230127173841',
+            orderId: 'integration_20230130114017',
             amount: '1',
-            txnToken: 'eb5ac0017d584f549c92daf92bb72e221674821322973'
+            txnToken: '0bb407b67f4049f1ab7b9eefdc6018621675059019304'
           },
           type: undefined
         };
