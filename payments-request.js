@@ -2,7 +2,9 @@
 const checkAllValues = response => {
     return new Promise((resolve, reject) => {
         console.log('response', response);
-        
+        // Object.keys(response).forEach(val => {
+        //     if (val === null) resolve(false);
+        // })
         resolve(true);
     });
 }
@@ -135,7 +137,7 @@ function load () {
               ]
         };
         const paymentRequest = new PaymentRequest(supportedPaymentMethods, details, options);
-        paymentRequest.canMakePayment().then(isAppSupported => {isAppSupported && getPaymentRequest(this.props.cache).show();});
+        paymentRequest.canMakePayment().then(isAppSupported => {isAppSupported && paymentRequest.show();});
         //paymentRequest.show().then((response) => validateResponse(response)).catch((err) => console.log(err));
     } else {
         // nont supported
