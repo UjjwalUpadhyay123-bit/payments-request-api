@@ -72,38 +72,9 @@ function load () {
           // }
         ];
         const details = {
-          total: {label: 'Test Purchase', amount: {currency: 'USD', value: '100.00'}},
-          displayItems: [
-            {
-              label: '15% Discount',
-              amount: {
-                currency: 'INR',
-                value: 1
-              }
-            },
-            {
-              label: 'Tax',
-              amount: {
-                currency: 'INR',
-                value: 1.5
-              }
-            }
-          ],
-          shippingOptions: [
-            {
-              id: 'standard',
-              label: 'Standard shipping',
-              amount: {currency: 'INR', value: '5.00'},
-              selected: true
-            }
-          ]
+          total: {label: 'Test Purchase', amount: {currency: 'USD', value: '100.00'}}
         };
-      
-        const options = {
-          requestPayerEmail: true,
-          requestPayerName: true
-        };
-        const paymentRequest = new PaymentRequest(supportedPaymentMethods, details, options);
+        const paymentRequest = new PaymentRequest(supportedPaymentMethods, details);
         paymentRequest.canMakePayment().then(isAppSupported => {isAppSupported && paymentRequest.show().then(paymentResponse => {
             paymentResponse.complete('success')})
             .catch(err => console.log(err));
