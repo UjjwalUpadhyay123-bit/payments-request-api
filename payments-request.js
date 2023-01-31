@@ -55,9 +55,9 @@ function load () {
           mobile: '',
           initTxnData: {
             mid: 'PRINTE0148525564528',
-            orderId: 'integration_20230131131238',
+            orderId: 'integration_20230131132040',
             amount: '1',
-            txnToken: '97201810f1234163851ee3791da727b21675085784787'
+            txnToken: 'fa98f4788f36451cb989e822d3ed9a701675151442143'
           },
           type: 'FULL_APP_INVOKE'
         };
@@ -72,9 +72,9 @@ function load () {
           // }
         ];
         const details = {
-          total: {label: 'Test Purchase', amount: {currency: 'USD', value: '100.00'}}
+          total: {label: 'Payment', amount: {currency: 'INR', value: 100}}
         };
-        const paymentRequest = new window.PaymentRequest(supportedPaymentMethods, details);
+        const paymentRequest = new window.PaymentRequest(supportedPaymentMethods, data);
         paymentRequest.canMakePayment().then(isAppSupported => {isAppSupported && paymentRequest.show().then(paymentResponse => {
             paymentResponse.complete('success')})
             .catch(err => console.log(err));
