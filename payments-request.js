@@ -59,8 +59,7 @@ function load () {
             amount: '1',
             txnToken: '97201810f1234163851ee3791da727b21675085784787'
           },
-          type: 'FULL_APP_INVOKE',
-          fetchPayOption: {}
+          type: 'FULL_APP_INVOKE'
         };
         const supportedPaymentMethods = [
           {supportedMethods: 'https://securegw.paytm.in/pay', data: data},
@@ -73,14 +72,32 @@ function load () {
           // }
         ];
         const details = {
-          total: {
-            label: 'Payment',
-            amount: {
-              currency: 'INR',
-              value: 100
+          total: {label: 'Test Purchase', amount: {currency: 'USD', value: '100.00'}},
+          displayItems: [
+            {
+              label: '15% Discount',
+              amount: {
+                currency: 'INR',
+                value: 1
+              }
+            },
+            {
+              label: 'Tax',
+              amount: {
+                currency: 'INR',
+                value: 1.5
+              }
             }
-          }
-        }
+          ],
+          shippingOptions: [
+            {
+              id: 'standard',
+              label: 'Standard shipping',
+              amount: {currency: 'INR', value: '5.00'},
+              selected: true
+            }
+          ]
+        };
       
         const options = {
           requestPayerEmail: true,
@@ -88,27 +105,9 @@ function load () {
         };
         const paymentRequest = new PaymentRequest(supportedPaymentMethods, details, options);
         paymentRequest.canMakePayment().then(isAppSupported => {isAppSupported && paymentRequest.show().then(paymentResponse => {
-            // let data = {};
-            // data.methodName = paymentResponse.methodName;
-            // data.details = paymentResponse.details;
-
-            // return fetch('/pay', {
-            //   method: 'POST',
-            //   credentials: 'include',
-            //   headers: {
-            //     'Content-Type': 'application/json'
-            //   },
-            //   body: JSON.stringify(data)
-            // }).then (response => {
-              console.log('res', paymentResponse);
-              if(paymentResponse.status === 200) {
-                return paymentResponse.complete('success');
-              }
-            }).catch(() => {
-              paymentResponse.complete('fail');
-            })
-            // paymentResponse.complete('success')
-          });
+            paymentResponse.complete('success')})
+            .catch(err => console.log(err));
+            });
         //paymentRequest.show().then((response) => validateResponse(response)).catch((err) => console.log(err));
     } else {
         // nont supported
