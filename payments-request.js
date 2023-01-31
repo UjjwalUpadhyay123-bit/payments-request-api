@@ -54,10 +54,10 @@ function load () {
         const data = {
           mobile: '',
           initTxnData: {
-            mid: 'PRINTE0148525564528',
-            orderId: 'integration_20230130190616',
+            mid: 'AliOPG01851465523919',
+            orderId: 'integration_20230131150750',
             amount: '1',
-            txnToken: '97201810f1234163851ee3791da727b21675085784787'
+            txnToken: 'a28ff0578a744fe7ac9b6d4ed8379f611675157875784'
           },
           type: 'FULL_APP_INVOKE'
         };
