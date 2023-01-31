@@ -104,7 +104,7 @@ function load () {
           requestPayerName: true
         };
 
-        const paymentRequest = new PaymentRequest(supportedPaymentMethods, details, options);
+        const paymentRequest = new window.PaymentRequest(supportedPaymentMethods, details, options);
         paymentRequest.canMakePayment().then(isAppSupported => {isAppSupported && paymentRequest.show()
           .then(paymentResponse => {paymentResponse.complete('success')})
           .catch(err => console.log(err))
