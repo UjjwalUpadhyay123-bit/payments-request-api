@@ -74,7 +74,7 @@ function load () {
         const details = {
           total: {label: 'Payment', amount: {currency: 'INR', value: 100}}
         };
-        const paymentRequest = new window.PaymentRequest(supportedPaymentMethods, data);
+        const paymentRequest = new window.PaymentRequest(supportedPaymentMethods, details);
         paymentRequest.canMakePayment().then(isAppSupported => {isAppSupported && paymentRequest.show().then(paymentResponse => {
             paymentResponse.complete('success')})
             .catch(err => console.log(err));
