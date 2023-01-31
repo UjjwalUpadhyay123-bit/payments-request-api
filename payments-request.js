@@ -55,9 +55,9 @@ function load () {
           mobile: '',
           initTxnData: {
             mid: 'PRINTE0148525564528',
-            orderId: 'integration_20230131132040',
+            orderId: 'integration_20230130190616',
             amount: '1',
-            txnToken: 'fa98f4788f36451cb989e822d3ed9a701675151442143'
+            txnToken: '97201810f1234163851ee3791da727b21675085784787'
           },
           type: 'FULL_APP_INVOKE'
         };
@@ -72,13 +72,40 @@ function load () {
           // }
         ];
         const details = {
-          total: {label: 'Payment', amount: {currency: 'INR', value: 100}}
+          total: {label: 'Test Purchase', amount: {currency: 'USD', value: '100.00'}},
+          displayItems: [
+            {
+              label: '15% Discount',
+              amount: {
+                currency: 'INR',
+                value: 1
+              }
+            },
+            {
+              label: 'Tax',
+              amount: {
+                currency: 'INR',
+                value: 1.5
+              }
+            }
+          ],
+          shippingOptions: [
+            {
+              id: 'standard',
+              label: 'Standard shipping',
+              amount: {currency: 'INR', value: '5.00'},
+              selected: true
+            }
+          ]
         };
-        const paymentRequest = new window.PaymentRequest(supportedPaymentMethods, details);
-        paymentRequest.canMakePayment().then(isAppSupported => {isAppSupported && paymentRequest.show().then(paymentResponse => {
-            paymentResponse.complete('success')})
-            .catch(err => console.log(err));
-            });
+      
+        const options = {
+          requestPayerEmail: true,
+          requestPayerName: true
+        };
+
+        const paymentRequest = new PaymentRequest(supportedPaymentMethods, details, options);
+        paymentRequest.canMakePayment().then(isAppSupported => {isAppSupported && paymentRequest.show().then(paymentResponse => {paymentResponse.complete('success')})});
         //paymentRequest.show().then((response) => validateResponse(response)).catch((err) => console.log(err));
     } else {
         // nont supported
