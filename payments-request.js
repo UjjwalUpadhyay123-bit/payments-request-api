@@ -54,10 +54,10 @@ function load () {
         const data = {
           mobile: '',
           initTxnData: {
-            mid: 'AliOPG01851465523919',
-            orderId: 'integration_20230131150750',
+            mid: 'AliSub58582630351896',
+            orderId: 'integration_20230131185511',
             amount: '1',
-            txnToken: 'a28ff0578a744fe7ac9b6d4ed8379f611675157875784'
+            txnToken: '045bc6aa21cb4925a915ce21ca9c92701675171538214'
           },
           type: 'FULL_APP_INVOKE'
         };
