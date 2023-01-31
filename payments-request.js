@@ -55,7 +55,7 @@ function load () {
           mobile: '',
           initTxnData: {
             mid: 'PRINTE0148525564528',
-            orderId: 'integration_20230130190616',
+            orderId: 'integration_20230131131238',
             amount: '1',
             txnToken: '97201810f1234163851ee3791da727b21675085784787'
           },
