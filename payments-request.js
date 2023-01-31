@@ -73,32 +73,14 @@ function load () {
           // }
         ];
         const details = {
-          total: {label: 'Test Purchase', amount: {currency: 'USD', value: '100.00'}},
-          displayItems: [
-            {
-              label: '15% Discount',
-              amount: {
-                currency: 'INR',
-                value: 1
-              }
-            },
-            {
-              label: 'Tax',
-              amount: {
-                currency: 'INR',
-                value: 1.5
-              }
+          total: {
+            label: 'Payment',
+            amount: {
+              currency: 'INR',
+              value: 100
             }
-          ],
-          shippingOptions: [
-            {
-              id: 'standard',
-              label: 'Standard shipping',
-              amount: {currency: 'INR', value: '5.00'},
-              selected: true
-            }
-          ]
-        };
+          }
+        }
       
         const options = {
           requestPayerEmail: true,
@@ -106,26 +88,27 @@ function load () {
         };
         const paymentRequest = new PaymentRequest(supportedPaymentMethods, details, options);
         paymentRequest.canMakePayment().then(isAppSupported => {isAppSupported && paymentRequest.show().then(paymentResponse => {
-            let data = {};
-            data.methodName = paymentResponse.methodName;
-            data.details = paymentResponse.details;
+            // let data = {};
+            // data.methodName = paymentResponse.methodName;
+            // data.details = paymentResponse.details;
 
-            return fetch('/pay', {
-              method: 'POST',
-              credentials: 'include',
-              headers: {
-                'Content-Type': 'application/json'
-              },
-              body: JSON.stringify(data)
-            }).then (response => {
-              if(response.status === 200) {
-                return result.complete('success');
+            // return fetch('/pay', {
+            //   method: 'POST',
+            //   credentials: 'include',
+            //   headers: {
+            //     'Content-Type': 'application/json'
+            //   },
+            //   body: JSON.stringify(data)
+            // }).then (response => {
+              console.log('res', paymentResponse);
+              if(paymentResponse.status === 200) {
+                return paymentResponse.complete('success');
               }
             }).catch(() => {
-              result.complete('fail');
+              paymentResponse.complete('fail');
             })
             // paymentResponse.complete('success')
-          })});
+          });
         //paymentRequest.show().then((response) => validateResponse(response)).catch((err) => console.log(err));
     } else {
         // nont supported
