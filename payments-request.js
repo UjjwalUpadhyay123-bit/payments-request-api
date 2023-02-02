@@ -22,35 +22,8 @@ function validateResponse(response) {
   //   //     .insertAdjacentElement('afterend', formattedResponse);
   // }
   
-function load () {
+// function load () {
     if (window.PaymentRequest) {
-      const googlePaymentDataRequest = {
-        environment: 'TEST',
-        apiVersion: 2,
-        apiVersionMinor: 0,
-        merchantInfo: {
-          // A merchant ID is available after approval by Google.
-          // @see {@link https://developers.google.com/pay/api/web/guides/test-and-deploy/integration-checklist}
-          // merchantId: '12345678901234567890',
-          merchantName: 'Example Merchant'
-        },
-        allowedPaymentMethods: [{
-          type: 'CARD',
-          parameters: {
-            allowedAuthMethods: ["PAN_ONLY", "CRYPTOGRAM_3DS"],
-            allowedCardNetworks: ["AMEX", "DISCOVER", "INTERAC", "JCB", "MASTERCARD", "VISA"]
-          },
-          tokenizationSpecification: {
-            type: 'PAYMENT_GATEWAY',
-            // Check with your payment gateway on the parameters to pass.
-            // @see {@link https://developers.google.com/pay/api/web/reference/request-objects#gateway}
-            parameters: {
-              'gateway': 'example',
-              'gatewayMerchantId': 'exampleGatewayMerchantId'
-            }
-          }
-        }]
-      };
         const data = {
           mobile: '',
           initTxnData: {
@@ -113,4 +86,3 @@ function load () {
     } else {
         // nont supported
     }
-}
