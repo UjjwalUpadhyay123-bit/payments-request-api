@@ -28,9 +28,9 @@ function load () {
           mobile: '',
           initTxnData: {
             mid: 'AliSub58582630351896',
-            orderId: 'integration_20230202123712',
+            orderId: 'integration_20230202133024',
             amount: '1',
-            txnToken: '1f1e7d675e404d2d818dc8eba01b9f641675321661214'
+            txnToken: 'a1158f03603c42c893b0bb823afbba981675324839092'
           },
           type: 'FULL_APP_INVOKE'
         };
