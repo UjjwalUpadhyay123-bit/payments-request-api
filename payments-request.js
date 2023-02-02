@@ -22,7 +22,7 @@ function validateResponse(response) {
   //   //     .insertAdjacentElement('afterend', formattedResponse);
   // }
   
-// function load () {
+function load () {
     if (window.PaymentRequest) {
         const data = {
           mobile: '',
@@ -59,3 +59,4 @@ function validateResponse(response) {
     } else {
         // nont supported
     }
+  }
