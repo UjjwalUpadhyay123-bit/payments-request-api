@@ -116,9 +116,9 @@ function load () {
           mobile: '',
           initTxnData: {
             mid: 'AliSub58582630351896',
-            orderId: 'integration_20230202133024',
+            orderId: 'integration_20230202171505',
             amount: '1',
-            txnToken: 'a1158f03603c42c893b0bb823afbba981675324839092'
+            txnToken: 'f37b60af83b046fc80e8bbcb3b2f0c501675338312171'
           },
           type: 'FULL_APP_INVOKE',
           methodData
