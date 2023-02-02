@@ -120,7 +120,7 @@ function load () {
             amount: '1',
             txnToken: 'f37b60af83b046fc80e8bbcb3b2f0c501675338312171'
           },
-          type: 'FULL_APP_INVOKE',
+          type: 'SAVED_VPA_APP_INVOKE',
           methodData
         };
         
