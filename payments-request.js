@@ -28,9 +28,9 @@ function validateResponse(response) {
           mobile: '',
           initTxnData: {
             mid: 'AliSub58582630351896',
-            orderId: 'integration_20230202122426',
+            orderId: 'integration_20230202123712',
             amount: '1',
-            txnToken: 'fb10b06631b141bda5d1a2bb981f49091675320879293'
+            txnToken: '1f1e7d675e404d2d818dc8eba01b9f641675321661214'
           },
           type: 'FULL_APP_INVOKE'
         };
